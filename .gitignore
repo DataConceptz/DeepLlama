@@ -46,6 +46,7 @@ data/
 *.md
 *.docx
 !README.md
+!USER_GUIDE.md
 
 # CSV exports
 *.csv
