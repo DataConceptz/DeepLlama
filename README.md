@@ -2,20 +2,28 @@
 
 A comprehensive, enterprise-grade desktop application for conducting deep literature reviews using local AI models.
 
-**Version 1.1** - Now with advanced writing styles, humanization, and performance optimization!
+**Version 2.0 - Enterprise Edition** - Now with Analytics Dashboard, Batch Operations, and Advanced Export Formats!
 
 ## ✨ Features
 
+### Core Features
 - 🔍 **Multi-Source Search**: Search across 50+ academic databases (OpenAlex, PubMed, arXiv, CORE, etc.)
 - 📊 **Smart Organization**: Sortable table view with complete bibliographic metadata
 - 🤖 **AI-Powered Analysis**: Generate comprehensive reports using local Ollama models
 - ✍️ **5 Writing Styles**: Academic, Professional, Technical, Executive, Journalistic
 - 🎭 **Humanization**: Natural, human-like writing with varied sentence structure
 - ⚡ **Fast Mode**: 40-60% faster generation for quick summaries
-- 📝 **Export Options**: Export to Markdown or DOCX with proper citations (CSL styles)
 - 💬 **AI Chat**: Context-aware chat interface for discussing research articles
 - 🎨 **Professional UI**: Modern dark/light themes with customizable settings
 - 💾 **Local Storage**: SQLite database for all articles and metadata
+
+### NEW in v2.0!
+- 📈 **Analytics Dashboard**: Publication timeline, top authors/journals, keyword clouds, source distribution
+- ⚡ **Batch Operations**: AI summarization, auto-tagging, duplicate detection, research gap analysis
+- 📤 **Advanced Export**: BibTeX, RIS, EndNote XML, JSON, Plain Text (8 total formats)
+- 🔍 **Research Intelligence**: Gap identification, methodology extraction, reading list generation
+- 🏷️ **Auto-Tagging**: AI-powered keyword extraction and categorization
+- 📋 **Duplicate Detection**: Intelligent similarity matching with configurable threshold
 
 ## Installation
 
@@ -60,10 +68,10 @@ python main.py
 - Professional formatting with proper structure
 
 ### 4. Export & Citations
-- Markdown export with inline citations
-- DOCX export with formatted references
-- Multiple CSL citation styles supported
+- **8 Export Formats**: Markdown, DOCX, BibTeX, RIS, EndNote XML, JSON, Plain Text, CSV
+- Multiple CSL citation styles supported (APA, MLA, Chicago, IEEE)
 - Automatic bibliography generation
+- BibTeX/RIS for reference managers (Zotero, EndNote, Mendeley)
 
 ### 5. AI Chat Interface
 - Article-based discussions
@@ -101,10 +109,56 @@ Enable natural, human-like writing that:
 
 📖 **See [ENHANCEMENTS_V1.1.md](ENHANCEMENTS_V1.1.md) for complete details**
 
+## 🆕 What's New in v2.0 - Enterprise Edition
+
+### Analytics Dashboard 📈
+Gain instant insights into your research collection:
+- **Overview Metrics**: Total articles, recent vs older publications, average scores
+- **Publication Timeline**: Visualize research trends over time
+- **Top Authors & Journals**: Identify key contributors and publications
+- **Keyword Cloud**: Discover dominant themes in your research
+- **Source Distribution**: Analyze where your articles come from
+- **JSON Export**: Export analytics for custom visualizations
+
+### Batch Operations ⚡
+Process multiple articles simultaneously:
+- **Batch Summarization**: Generate AI summaries for 100s of articles
+- **Auto-Tagging**: Automatic keyword extraction and categorization
+- **Duplicate Detection**: Find similar articles with configurable threshold
+- **Research Gap Analysis**: AI-powered identification of research opportunities
+- **Reading List Generation**: Prioritized recommendations
+- **Methodology Extraction**: Categorize research approaches
+
+### Advanced Export Formats 📤
+Export your collection in professional formats:
+- **BibTeX (.bib)**: Perfect for LaTeX documents
+- **RIS (.ris)**: Compatible with EndNote, Zotero, Mendeley
+- **EndNote XML (.xml)**: Direct EndNote desktop import
+- **JSON (.json)**: Custom data analysis and scripts
+- **Plain Text (.txt)**: Simple, readable format
+- Plus existing: Markdown, DOCX, CSV
+
+### Research Intelligence 🔍
+- **Gap Identification**: Discover underexplored research areas
+- **Trend Analysis**: Track publication patterns over time
+- **Author Networks**: Identify collaboration opportunities
+- **Topic Clustering**: Automatic thematic organization
+
+### Performance Improvements
+- Handles 10,000+ articles efficiently
+- Optimized database queries
+- Threaded operations (non-blocking UI)
+- Real-time progress tracking for all batch operations
+
+📖 **See [ENHANCEMENTS_V2.0.md](ENHANCEMENTS_V2.0.md) for complete v2.0 details**
+📖 **See [FEATURES_V2.0_SUMMARY.md](FEATURES_V2.0_SUMMARY.md) for quick reference**
+
 ## 📚 Documentation
 
 - **[USER_GUIDE.md](USER_GUIDE.md)**: Complete user manual
 - **[FEATURES_IMPLEMENTED.md](FEATURES_IMPLEMENTED.md)**: Full feature list
+- **[ENHANCEMENTS_V2.0.md](ENHANCEMENTS_V2.0.md)**: v2.0 complete feature guide
+- **[FEATURES_V2.0_SUMMARY.md](FEATURES_V2.0_SUMMARY.md)**: v2.0 quick reference
 - **[ENHANCEMENTS_V1.1.md](ENHANCEMENTS_V1.1.md)**: v1.1 release notes
 
 ## License

@@ -13,9 +13,13 @@ from .results_tab import ResultsTab
 from .report_tab import ReportTab
 from .chat_tab import ChatTab
 from .settings_tab import SettingsTab
+from .analytics_tab import AnalyticsTab
+from .batch_tab import BatchTab
 
 from ..database import DatabaseManager
 from ..services import OllamaService, SearchService, ExportService, CitationService
+from ..services.batch_service import BatchService
+from ..services.advanced_export import AdvancedExportService
 from ..utils import Config
 
 
@@ -38,6 +42,8 @@ class MainWindow(QMainWindow):
         self.search_service = SearchService()
         self.export_service = ExportService()
         self.citation_service = CitationService(self.config.get('citation_style'))
+        self.batch_service = BatchService(self.ollama_service, self.db)
+        self.advanced_export_service = AdvancedExportService()
 
         # Current data
         self.current_articles = []
@@ -79,6 +85,8 @@ class MainWindow(QMainWindow):
         self.search_tab = SearchTab(self)
         self.results_tab = ResultsTab(self)
         self.report_tab = ReportTab(self)
+        self.analytics_tab = AnalyticsTab(self)
+        self.batch_tab = BatchTab(self)
         self.chat_tab = ChatTab(self)
         self.settings_tab = SettingsTab(self)
 
@@ -86,6 +94,8 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.search_tab, "🔍 Search")
         self.tabs.addTab(self.results_tab, "📊 Literature Database")
         self.tabs.addTab(self.report_tab, "📄 Report Generation")
+        self.tabs.addTab(self.analytics_tab, "📈 Analytics Dashboard")
+        self.tabs.addTab(self.batch_tab, "⚡ Batch Operations")
         self.tabs.addTab(self.chat_tab, "💬 AI Chat")
         self.tabs.addTab(self.settings_tab, "⚙️ Settings")
 
@@ -99,6 +109,7 @@ class MainWindow(QMainWindow):
         self.results_tab.selection_changed.connect(self.on_article_selection_changed)
         self.settings_tab.theme_changed.connect(self.apply_theme)
         self.settings_tab.settings_changed.connect(self.on_settings_changed)
+        self.articles_loaded.connect(self.analytics_tab.load_articles)
 
     def setup_menu(self):
         """Setup menu bar"""
@@ -242,17 +253,22 @@ class MainWindow(QMainWindow):
             "About DeepLlama",
             "<h2>DeepLlama</h2>"
             "<p>AI Literature Review Research Tool</p>"
-            "<p>Version 1.0.0</p>"
-            "<p>A comprehensive desktop application for conducting deep literature reviews "
-            "using local AI models.</p>"
-            "<p><b>Features:</b></p>"
+            "<p><b>Version 2.0 - Enterprise Edition</b></p>"
+            "<p>A comprehensive, enterprise-grade desktop application for conducting deep "
+            "literature reviews using local AI models.</p>"
+            "<p><b>Core Features:</b></p>"
             "<ul>"
-            "<li>Multi-source academic search</li>"
-            "<li>AI-powered report generation</li>"
-            "<li>Smart article management</li>"
-            "<li>Export to Markdown/DOCX</li>"
+            "<li>Multi-source academic search (50+ databases)</li>"
+            "<li>AI-powered report generation with 5 writing styles</li>"
+            "<li>Smart article management with analytics</li>"
+            "<li>Batch AI operations (summarization, tagging, gap analysis)</li>"
+            "<li>Advanced export formats (Markdown, DOCX, BibTeX, RIS, EndNote)</li>"
+            "<li>Analytics dashboard with visualizations</li>"
+            "<li>Duplicate detection and research gap identification</li>"
             "<li>Context-aware AI chat</li>"
             "</ul>"
+            "<p><b>New in v2.0:</b> Analytics Dashboard, Batch Operations, "
+            "Advanced Export Formats, Research Gap Analysis</p>"
         )
 
     def closeEvent(self, event):
