@@ -48,6 +48,7 @@ data/
 !README.md
 !USER_GUIDE.md
 !FEATURES_IMPLEMENTED.md
+!ENHANCEMENTS_V1.1.md
 
 # CSV exports
 *.csv
